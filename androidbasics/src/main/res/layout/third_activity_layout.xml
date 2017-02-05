@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ff669900"
+    tools:context=".ThirdActivity" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/thirdtitle" />
+    
+	<Button
+        android:id="@+id/btn_start_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startDialog"
+        android:text="@string/opendialog" />
+
+	<Button
+        android:id="@+id/btn_start_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startCommonToast"
+        android:text="@string/opentoast" />
+			
+	<Button
+        android:id="@+id/btn_start_custom_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startCustomToast"
+        android:text="@string/opencustomtoast" />
+			
+	<EditText 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/textHint"
+	    />
+</LinearLayout>

@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffbb33"
+    tools:context=".FirstActivity" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/firsttitle" />
+    
+    <Button 
+        android:id="@+id/button1To2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/second"></Button>
+    
+	<Button
+        android:id="@+id/btn_start_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startDialog"
+        android:text="@string/opendialog" />
+	
+	<EditText 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/textHint"
+	    />
+</LinearLayout>

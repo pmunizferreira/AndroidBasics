@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#aaff0000"
+        android:orientation="vertical"
+        android:padding="8dp" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+        
+        <TextView
+            android:id="@+id/logView"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="bottom"
+		    android:singleLine="false"
+		    android:lines="10"
+		    android:layout_marginLeft="5dip"
+		    android:layout_marginRight="5dip" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+        
+        <TextView
+            android:id="@+id/statusFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text=""
+		    android:layout_marginLeft="5dip"
+		    android:layout_marginRight="5dip" />
+        
+        <TextView
+            android:id="@+id/statusSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text=""
+		    android:layout_marginLeft="5dip"
+		    android:layout_marginRight="5dip" />
+        
+        <TextView
+            android:id="@+id/statusThird"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text=""
+		    android:layout_marginLeft="5dip"
+		    android:layout_marginRight="5dip" />
+    </LinearLayout>
+</merge>

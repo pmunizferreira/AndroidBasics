@@ -1,0 +1,12 @@
+
+.gradle/*
+.idea/*
+*/build/generated/*
+*/build/intermediates/*
+*/build/outputs/*
+build/generated/*
+build/intermediates/*
+build/outputs/*
+*.lock
+*.bin
+*.class
