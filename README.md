@@ -43,7 +43,7 @@ Caso a IDE escolhida não tenha integração direta com o SDK, é preciso execut
     
     4. No SDK Mnager, é possível instalar uma ou mais versões do Android. Selecione a plataforma Android que deseja. Assegure-se de que Android SDK Tools e Android SDK Plataform-tools estejam selecionados, pois são neles que estarão o ADB e o AVD.
     As plataformas escolhidas estarão em /Users/<%user%>/Library/Android/sdk/plataforms/
-    O ADB estará em /Users/<%user%>/Library/Android/sdk/plataform-tools/
+    O ADB estará em /Users/<%user%>/Library/Android/sdk/plataform-tools/
     
     5. Para que os ADB possa ser executado fora da sua pasta, adicione seu caminho ao path da máquina  
     export PATH="/Users/<%user%>/Library/Android/sdk/platform-tools":$PATH
