@@ -19,7 +19,7 @@ De posse do Android SDK e suas ferramentas utilitárias, a IDE pode controlar o 
 
 Para iniciar um projeto Android, precisamos:
 
-    1. Instalar a IDE Android Studio já com o SDK do Android
+    1. Instalar a IDE Android Studio já com o SDK do Android
     https://developer.android.com/studio/index.html
     
     2. Para configurar o SDK Manager, vá em Tools -> Android -> SDK Manager
@@ -60,11 +60,15 @@ Caso a IDE escolhida não tenha integração direta com o SDK, é preciso execut
     Caso haja mais de um device conectado ao adb, execute o comando com o ID deste device, listado no comando "adb devices"
     adb -s <%device_id%> uninstall com.tw.mobile
     
-    9. Para instalar um aplicativo em um device
+    9. Para compilar e gerar o apk, vá para a pasta do projeto e execute
+    ./gradlew assemble
+    Os apks gerados estarão em <%caminho do projeto%>/build/outputs/apk/
+    
+    10. Para instalar um aplicativo em um device
     adb install app.apk
     
-    10. Para visualizar o log do aparelho
+    11. Para visualizar o log do aparelho
     adb logcat
     
-    11. Para ver logs apenas de uma aplicação
+    12. Para ver logs apenas de uma aplicação
     adb logcat <your package name>:<log level> *:S
