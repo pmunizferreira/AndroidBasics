@@ -24,10 +24,12 @@ Para iniciar um projeto Android, precisamos:
     
     2. Para configurar o SDK Manager, vá em Tools -> Android -> SDK Manager
     No SDK Manager, é possível instalar uma ou mais versões do Android.
-    Selecione a plataforma Android que deseja. Assegure-se de que Android SDK Tools e Android SDK Plataform-tools estejam selecionados, pois são neles que estarão o ADB e o AVD.
+    Selecione a API Level 17 (Jelly Bean), ou superior. 
+    Assegure-se de que Android SDK Tools e Android SDK Plataform-tools estejam selecionados, pois são neles que estarão o ADB e o AVD.
     
     3. Para configurar um emulador, vá em Tools -> Android -> AVD Manager
-
+    Selecione "Create Virtual Device" e o modelo desejado. Caso não haja API Level instalada para o modelo escolhido, clique em Download.
+    
 <h3>Alternativa ao Android Studio</h3>
 Caso deseje outra IDE, como o Atom, é preciso configurar o SDK, o ADB e o AVD manualmente.
 Caso a IDE escolhida não tenha integração direta com o SDK, é preciso executar os comandos em um prompt.
@@ -48,7 +50,8 @@ Caso a IDE escolhida não tenha integração direta com o SDK, é preciso execut
     5. Para que os ADB possa ser executado fora da sua pasta, adicione seu caminho ao path da máquina  
     export PATH="/Users/<%user%>/Library/Android/sdk/platform-tools":$PATH
     
-    6. Para configurar um emulador, abra o SDK Manager, Tools -> Manage AVDs
+    6. Para configurar um emulador, vá em Tools -> Android -> AVD Manager
+    Selecione "Create Virtual Device" e o modelo desejado. Caso não haja API Level instalada para o modelo escolhido, clique em Download.
     
     7. Para listar os devices (físicos os emuladores)
     adb devices
