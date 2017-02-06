@@ -25,10 +25,12 @@ Para iniciar um projeto Android, precisamos:
     2. Para configurar o SDK Manager, vá em Tools -> Android -> SDK Manager
     No SDK Manager, é possível instalar uma ou mais versões do Android.
     Selecione a API Level 17 (Jelly Bean), ou superior. 
-    Assegure-se de que Android SDK Tools e Android SDK Plataform-tools estejam selecionados, pois são neles que estarão o ADB e o AVD.
+    Assegure-se de que Android SDK Tools e Android SDK Plataform-tools estejam selecionados, pois são neles 
+    que estarão o ADB e o AVD.
     
     3. Para configurar um emulador, vá em Tools -> Android -> AVD Manager
-    Selecione "Create Virtual Device" e o modelo desejado. Caso não haja API Level instalada para o modelo escolhido, clique em Download.
+    Selecione "Create Virtual Device" e o modelo desejado. Caso não haja API Level instalada para o modelo 
+    escolhido, clique em Download.
     
 <h3>Alternativa ao Android Studio</h3>
 Caso deseje outra IDE, como o Atom, é preciso configurar o SDK, o ADB e o AVD manualmente.
@@ -43,7 +45,9 @@ Caso a IDE escolhida não tenha integração direta com o SDK, é preciso execut
     3. Execute o SDK Manager
     sh /Users/<%user%>/Library/Android/sdk/tools/android
     
-    4. No SDK Mnager, é possível instalar uma ou mais versões do Android. Selecione a plataforma Android que deseja. Assegure-se de que Android SDK Tools e Android SDK Plataform-tools estejam selecionados, pois são neles que estarão o ADB e o AVD.
+    4. No SDK Mnager, é possível instalar uma ou mais versões do Android. Selecione a plataforma Android que 
+    deseja. Assegure-se de que Android SDK Tools e Android SDK Plataform-tools estejam selecionados, pois 
+    são neles que estarão o ADB e o AVD.
     As plataformas escolhidas estarão em /Users/<%user%>/Library/Android/sdk/plataforms/
     O ADB estará em /Users/<%user%>/Library/Android/sdk/plataform-tools/
     
@@ -51,7 +55,8 @@ Caso a IDE escolhida não tenha integração direta com o SDK, é preciso execut
     export PATH="/Users/<%user%>/Library/Android/sdk/platform-tools":$PATH
     
     6. Para configurar um emulador, vá em Tools -> Android -> AVD Manager
-    Selecione "Create Virtual Device" e o modelo desejado. Caso não haja API Level instalada para o modelo escolhido, clique em Download.
+    Selecione "Create Virtual Device" e o modelo desejado. Caso não haja API Level instalada para o modelo 
+    escolhido, clique em Download.
     
     7. Para listar os devices (físicos os emuladores)
     adb devices
@@ -60,7 +65,8 @@ Caso a IDE escolhida não tenha integração direta com o SDK, é preciso execut
     adb uninstall <%nome do pacote%>
     ex: adb uninstall com.tw.mobile
     
-    Caso haja mais de um device conectado ao adb, execute o comando com o ID deste device, listado no comando "adb devices"
+    Caso haja mais de um device conectado ao adb, execute o comando com o ID deste device, listado no 
+    comando "adb devices"
     adb -s <%device_id%> uninstall com.tw.mobile
     
     9. Para compilar e gerar o apk, vá para a pasta do projeto e execute
