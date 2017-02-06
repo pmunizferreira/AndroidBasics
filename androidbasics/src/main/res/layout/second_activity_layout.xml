@@ -22,8 +22,8 @@
         android:id="@+id/btn_start_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="startDialog"
-        android:text="@string/opendialog" />
+        android:onClick="startCustomDialog"
+        android:text="@string/opencustomdialog" />
 	
 	<EditText 
         android:layout_width="fill_parent"

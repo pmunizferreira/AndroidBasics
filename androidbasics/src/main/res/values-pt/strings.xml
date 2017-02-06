@@ -5,7 +5,8 @@
     <string name="firsttitle">Primeira Activity!</string>
     <string name="secondtitle">Segunda Activity!</string>
     <string name="thirdtitle">Terceira Activity!</string>
-    <string name="opendialog">Abrir Dialog</string>
+    <string name="opendialog">Abrir Dialog Nativo</string>
+    <string name="opencustomdialog">Abrir Dialog Customizado</string>
     <string name="opentoast">Abrir Toast Comun</string>
     <string name="opencustomtoast">Abrir Toast Customizado</string>
     <string name="common_toast_title">Toast Comun</string>

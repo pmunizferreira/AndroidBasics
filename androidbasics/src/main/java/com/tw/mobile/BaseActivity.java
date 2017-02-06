@@ -1,6 +1,8 @@
 package com.tw.mobile;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -81,10 +83,23 @@ public class BaseActivity extends Activity {
 	}
 	
     public void startDialog(View v) {
-        Intent intent = new Intent(this, DialogActivity.class);
-        startActivity(intent);
+		new AlertDialog.Builder(this)
+				.setTitle("Your Alert")
+				.setMessage("Your Message")
+				.setCancelable(false)
+				.setPositiveButton("ok", new AlertDialog.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						// Whatever...
+					}
+				}).show();
     }
-	
+
+	public void startCustomDialog(View v) {
+		Intent intent = new Intent(this, DialogActivity.class);
+		startActivity(intent);
+	}
+
 	private void log(String method, String status) {
 		LogWindow.notifyOnAction(this, method, status);
 		System.out.println(this.getClass().getSimpleName() + "." + method);

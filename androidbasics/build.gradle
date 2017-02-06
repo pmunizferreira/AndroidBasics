@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.tw.mobile"
-        minSdkVersion 10
+        minSdkVersion 14
         targetSdkVersion 17
     }
 

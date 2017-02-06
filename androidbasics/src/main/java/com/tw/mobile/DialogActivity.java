@@ -16,12 +16,11 @@
 
 package com.tw.mobile;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
-public class DialogActivity extends Activity {
+public class DialogActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
