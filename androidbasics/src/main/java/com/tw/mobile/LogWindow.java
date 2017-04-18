@@ -45,12 +45,13 @@ public class LogWindow extends StandOutWindow {
 		LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 		parent = inflater.inflate(R.layout.log_layout, frame, true);
 		
-		updateStatuses(this.getApplicationContext());
+		updateStatuses(this.getApplicationContext(), log, getAppStatus(this.getApplicationContext()));
 	}
 
-	private static void updateStatuses(Context context) {
+	private static void updateStatuses(Context context, String log, String appStatus) {
 		TextView t = (TextView) parent.findViewById(R.id.logView);
 		t.setText(log);
+
 		if (stack[0] != null) {
 			((TextView) parent.findViewById(R.id.statusFirst)).setText("FirstActivity " + stack[0]);
 		} else {
@@ -67,7 +68,7 @@ public class LogWindow extends StandOutWindow {
 			((TextView) parent.findViewById(R.id.statusThird)).setText("");
 		}
 
-		((TextView) parent.findViewById(R.id.statusApp)).setText(getAppStatus(context));
+		((TextView) parent.findViewById(R.id.statusApp)).setText(appStatus);
 	}
 
 	private static String getAppStatus(Context context) {
@@ -75,7 +76,6 @@ public class LogWindow extends StandOutWindow {
 		List<ActivityManager.RunningAppProcessInfo> processList = activityManager.getRunningAppProcesses();
 		for (ActivityManager.RunningAppProcessInfo process : processList)
 		{
-			System.out.println("process.processName "+process.processName+" importance="+process.importance);
 			if (process.processName.startsWith(packageName))
 			{
 				switch (process.importance) {
@@ -130,7 +130,7 @@ public class LogWindow extends StandOutWindow {
 	}
 	
 	public static void notifyOnAction(Activity activity, String method, String status) {
-		System.out.println("LogWindow.notifyOnAction() "+activity +" - " + parent);
+		System.out.println("LogWindow.notifyOnAction() "+ activity.getClass().getSimpleName() +"." + method);
 		if (log.length() > 0) {
 			log += "\n";
 		}
@@ -145,8 +145,11 @@ public class LogWindow extends StandOutWindow {
 			}
 		}
 
+		String appStatus = getAppStatus(activity);
+		System.out.println("LogWindow.notifyOnAction() App Status="+appStatus);
+
 		if (parent != null) {
-			updateStatuses(activity);
+			updateStatuses(activity, log, appStatus);
 		}
 	}
 
