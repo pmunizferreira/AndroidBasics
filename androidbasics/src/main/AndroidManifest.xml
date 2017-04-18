@@ -34,10 +34,8 @@
         <activity android:name=".DialogActivity"
                   android:theme="@android:style/Theme.Dialog">
         </activity>
-                
         <service android:name=".LogWindow" >
         </service>
-        
     </application>
 
 </manifest>

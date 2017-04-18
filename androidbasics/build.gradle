@@ -8,12 +8,17 @@ android {
         applicationId "com.tw.mobile"
         minSdkVersion 14
         targetSdkVersion 17
+
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+
+        debug {
+            debuggable true
         }
     }
 }

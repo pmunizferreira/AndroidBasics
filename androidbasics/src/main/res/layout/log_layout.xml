@@ -6,7 +6,7 @@
         android:layout_height="fill_parent"
         android:background="#aaff0000"
         android:orientation="vertical"
-        android:padding="8dp" >
+        android:padding="2dp" >
 
         <TextView
             android:id="@+id/textView1"
@@ -22,7 +22,7 @@
 		    android:layout_height="wrap_content"
 		    android:gravity="bottom"
 		    android:singleLine="false"
-		    android:lines="10"
+		    android:lines="8"
 		    android:layout_marginLeft="5dip"
 		    android:layout_marginRight="5dip" />
 
@@ -30,7 +30,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status"
+            android:text="Activity Status"
             android:textColor="#ffffff"
             android:textStyle="bold" />
         
@@ -60,5 +60,22 @@
             android:text=""
 		    android:layout_marginLeft="5dip"
 		    android:layout_marginRight="5dip" />
-    </LinearLayout>
+
+		<TextView
+			android:id="@+id/textView3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Application Status"
+			android:textColor="#ffffff"
+			android:textStyle="bold" />
+
+		<TextView
+			android:id="@+id/statusApp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#ffffff"
+			android:text=""
+			android:layout_marginLeft="5dip"
+			android:layout_marginRight="5dip" />
+	</LinearLayout>
 </merge>

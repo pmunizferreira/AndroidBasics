@@ -1,17 +1,21 @@
 package com.tw.mobile;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import wei.mark.standout.StandOutWindow;
-import wei.mark.standout.constants.StandOutFlags;
-import wei.mark.standout.ui.Window;
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import wei.mark.standout.StandOutWindow;
+import wei.mark.standout.constants.StandOutFlags;
+import wei.mark.standout.ui.Window;
 
 public class LogWindow extends StandOutWindow {
 
@@ -20,6 +24,7 @@ public class LogWindow extends StandOutWindow {
 	private static String[] stack = new String[3];
 	private static SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
 	public static boolean visible;
+	public static String packageName = "com.tw.mobile";
 
 	@Override
 	public String getAppName() {
@@ -40,10 +45,10 @@ public class LogWindow extends StandOutWindow {
 		LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 		parent = inflater.inflate(R.layout.log_layout, frame, true);
 		
-		updateLog();
+		updateStatuses(this.getApplicationContext());
 	}
 
-	private static void updateLog() {
+	private static void updateStatuses(Context context) {
 		TextView t = (TextView) parent.findViewById(R.id.logView);
 		t.setText(log);
 		if (stack[0] != null) {
@@ -61,6 +66,35 @@ public class LogWindow extends StandOutWindow {
 		} else {
 			((TextView) parent.findViewById(R.id.statusThird)).setText("");
 		}
+
+		((TextView) parent.findViewById(R.id.statusApp)).setText(getAppStatus(context));
+	}
+
+	private static String getAppStatus(Context context) {
+		ActivityManager activityManager = (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+		List<ActivityManager.RunningAppProcessInfo> processList = activityManager.getRunningAppProcesses();
+		for (ActivityManager.RunningAppProcessInfo process : processList)
+		{
+			System.out.println("process.processName "+process.processName+" importance="+process.importance);
+			if (process.processName.startsWith(packageName))
+			{
+				switch (process.importance) {
+					case ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND:
+						return "FOREGROUND";
+					case ActivityManager.RunningAppProcessInfo.IMPORTANCE_BACKGROUND:
+						return "BACKGROUND";
+					case ActivityManager.RunningAppProcessInfo.IMPORTANCE_SERVICE:
+						return "SERVICE";
+					case ActivityManager.RunningAppProcessInfo.IMPORTANCE_VISIBLE:
+						return "VISIBLE";
+					case ActivityManager.RunningAppProcessInfo.IMPORTANCE_PERCEPTIBLE:
+						return "PERCEPTIBLE";
+					case ActivityManager.RunningAppProcessInfo.IMPORTANCE_EMPTY:
+						return "EMPTY";
+				}
+			}
+		}
+		return "";
 	}
 	
 	@Override
@@ -112,7 +146,7 @@ public class LogWindow extends StandOutWindow {
 		}
 
 		if (parent != null) {
-			updateLog();
+			updateStatuses(activity);
 		}
 	}
 
